@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profil SMK Negeri 2 Madiun</title>
+
+<style>
+:root {
+    --blue: #102d69;
+    --green: #168348;
+    --yellow: #ffcc28;
+    --red: #d83232;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    color: #263449;
+    line-height: 1.7;
+}
+
+header {
+    background: var(--blue);
+    color: white;
+    padding: 15px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+    background: white;
+    border-radius: 50%;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 18px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: var(--yellow);
+}
+
+.hero {
+    min-height: 570px;
+    background:
+    linear-gradient(90deg,rgba(5,25,70,.9),rgba(5,25,70,.4)),
+    url("gerbang.webp") center/cover;
+    display: flex;
+    align-items: center;
+    padding: 8%;
+    color: white;
+}
+
+.hero h1 {
+    font-size: clamp(35px,5vw,60px);
+    line-height: 1.2;
+}
+
+.hero h1 span {
+    color: var(--yellow);
+}
+
+.hero p {
+    margin: 20px 0;
+    font-size: 18px;
+}
+
+.jargon {
+    display: inline-block;
+    background: var(--yellow);
+    color: var(--blue);
+    padding: 12px 20px;
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--green);
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 7px;
+    margin-top: 15px;
+}
+
+.btn:hover {
+    background: var(--red);
+}
+
+section {
+    padding: 75px 9%;
+}
+
+.heading {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--blue);
+}
+
+.heading h2 {
+    font-size: 32px;
+}
+
+.line {
+    width: 75px;
+    height: 5px;
+    background: var(--yellow);
+    margin: 10px auto;
+}
+
+.profil {
+    background: white;
+}
+
+.profil-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.profil-content img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.profil h3 {
+    color: var(--green);
+    margin-bottom: 15px;
+}
+
+.kepsek {
+    background: var(--blue);
+    color: white;
+}
+
+.kepsek .heading {
+    color: white;
+}
+
+.kepsek-content {
+    background: white;
+    color: #263449;
+    max-width: 850px;
+    margin: auto;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    border-radius: 15px;
+}
+
+.kepsek-content img {
+    width: 220px;
+    border-radius: 12px;
+    border-bottom: 6px solid var(--yellow);
+}
+
+.kepsek-content h2 {
+    color: var(--blue);
+}
+
+.kepsek-content h3 {
+    color: var(--green);
+}
+
+.jurusan {
+    background: white;
+}
+
+.jurusan-grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 22px;
+}
+
+.card {
+    background: #f1f5fa;
+    padding: 25px;
+    border-left: 6px solid var(--green);
+    border-radius: 10px;
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-left-color: var(--red);
+    box-shadow: 0 5px 15px #0002;
+}
+
+.card h3 {
+    color: var(--blue);
+    margin-bottom: 10px;
+}
+
+.number {
+    background: var(--yellow);
+    color: var(--blue);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.slogan {
+    background: var(--yellow);
+    color: var(--blue);
+    text-align: center;
+}
+
+.slogan h2 {
+    font-size: clamp(25px,4vw,40px);
+    font-weight: 900;
+}
+
+.kontak-grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
+}
+
+.kontak-card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    border-top: 5px solid var(--green);
+}
+
+.kontak-card h3 {
+    color: var(--blue);
+    margin-bottom: 10px;
+}
+
+.kontak-card a {
+    color: var(--green);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer {
+    background: var(--blue);
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+footer strong {
+    color: var(--yellow);
+}
+
+.footer-line {
+    height: 6px;
+    background: linear-gradient(
+        to right,
+        var(--green) 25%,
+        var(--yellow) 25% 50%,
+        var(--red) 50% 75%,
+        white 75%
+    );
+}
+
+@media(max-width:768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    nav a {
+        margin: 0;
+        font-size: 13px;
+    }
+
+    .profil-content,
+    .jurusan-grid,
+    .kontak-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .kepsek-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .kepsek-content img {
+        width: 200px;
+    }
+
+    section {
+        padding: 55px 7%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <img src="logo.webp" alt="Logo SMKN 2 Madiun">
+        <div>
+            <h3>SMK NEGERI 2 MADIUN</h3>
+            <small>Cerdas, Berkarakter, Berprestasi</small>
+        </div>
+    </div>
+
+    <nav>
+        <a href="#beranda">Beranda</a>
+        <a href="#profil">Profil</a>
+        <a href="#kepsek">Kepala Sekolah</a>
+        <a href="#jurusan">Jurusan</a>
+        <a href="#kontak">Kontak</a>
+    </nav>
+</header>
+
+<div class="hero" id="beranda">
+    <div>
+        <div class="jargon">
+            CERDAS, BERKARAKTER, BERPRESTASI
+        </div>
+
+        <h1>
+            SELAMAT DATANG DI<br>
+            <span>SMK NEGERI 2 MADIUN</span>
+        </h1>
+
+        <p>
+            Mencetak generasi yang kompeten, profesional,
+            berkarakter dan siap menghadapi masa depan.
+        </p>
+
+        <a href="#profil" class="btn">Jelajahi Profil Sekolah</a>
+    </div>
+</div>
+
+<section class="profil" id="profil">
+    <div class="heading">
+        <h2>Profil Sekolah</h2>
+        <div class="line"></div>
+        <p>Mengenal SMK Negeri 2 Madiun</p>
+    </div>
+
+    <div class="profil-content">
+        <img src="gerbang.webp" alt="Gerbang SMKN 2 Madiun">
+
+        <div>
+            <h3>Latar Belakang Sekolah</h3>
+
+            <p>
+                SMK Negeri 2 Madiun merupakan lembaga pendidikan
+                kejuruan negeri yang berlokasi di Kota Madiun,
+                Provinsi Jawa Timur.
+            </p>
+
+            <p>
+                Sekolah ini berawal dari SMEA Negeri Madiun
+                pada tahun 1963. Seiring perkembangan zaman,
+                SMK Negeri 2 Madiun terus meningkatkan kualitas
+                pendidikan, keterampilan, teknologi dan karakter
+                peserta didik.
+            </p>
+
+            <p>
+                SMK Negeri 2 Madiun berkomitmen menghasilkan
+                lulusan yang memiliki kompetensi, kreativitas,
+                kedisiplinan dan siap bersaing di dunia kerja.
+            </p>
+
+            <a class="btn" href="https://www.smkn2madiun.sch.id/"
+               target="_blank">Website Sekolah</a>
+        </div>
+    </div>
+</section>
+
+<section class="kepsek" id="kepsek">
+    <div class="heading">
+        <h2>Kepala Sekolah</h2>
+        <div class="line"></div>
+    </div>
+
+    <div class="kepsek-content">
+        <img src="kepala-sekolah.jpeg" alt="Kepala Sekolah">
+
+        <div>
+            <h2>BAPAK PUGUH PRASTOMO</h2>
+            <h3>S. Pd., M. Pd.</h3>
+            <p><strong>Kepala SMK Negeri 2 Madiun</strong></p>
+
+            <p>
+                Memimpin dan mengembangkan pendidikan sekolah
+                dengan semangat peningkatan kualitas pembelajaran,
+                penguatan karakter serta peningkatan prestasi
+                peserta didik.
+            </p>
+
+            <br>
+            <strong style="color:#168348">
+                CERDAS, BERKARAKTER, BERPRESTASI
+            </strong>
+        </div>
+    </div>
+</section>
+
+<section class="jurusan" id="jurusan">
+    <div class="heading">
+        <h2>Program Keahlian</h2>
+        <div class="line"></div>
+        <p>Program keahlian SMK Negeri 2 Madiun</p>
+    </div>
+
+    <div class="jurusan-grid">
+
+        <div class="card">
+            <div class="number">01</div>
+            <h3>Pemasaran</h3>
+            <p>
+                Mempelajari strategi pemasaran, pelayanan pelanggan,
+                bisnis dan pengelolaan penjualan.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="number">02</div>
+            <h3>Manajemen Perkantoran dan Layanan Bisnis</h3>
+            <p>
+                Mempelajari administrasi perkantoran,
+                pengelolaan dokumen dan komunikasi bisnis.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="number">03</div>
+            <h3>Akuntansi dan Keuangan Lembaga</h3>
+            <p>
+                Mempelajari pencatatan transaksi,
+                laporan keuangan dan administrasi akuntansi.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="number">04</div>
+            <h3>Desain Komunikasi Visual</h3>
+            <p>
+                Mempelajari desain grafis, ilustrasi,
+                fotografi dan komunikasi visual.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section class="slogan">
+    <h2>CERDAS, BERKARAKTER, BERPRESTASI</h2>
+    <p>Membangun generasi unggul untuk masa depan Indonesia.</p>
+</section>
+
+<section id="kontak">
+    <div class="heading">
+        <h2>Informasi dan Kontak</h2>
+        <div class="line"></div>
+    </div>
+
+    <div class="kontak-grid">
+
+        <div class="kontak-card">
+            <h3>📍 Alamat Sekolah</h3>
+            <p>
+                Jl. Letjen Haryono No. 18,
+                Kota Madiun, Jawa Timur.
+            </p>
+        </div>
+
+        <div class="kontak-card">
+            <h3>👤 Kontak Person</h3>
+            <p>
+                Bagian Tata Usaha SMK Negeri 2 Madiun.
+            </p>
+        </div>
+
+        <div class="kontak-card">
+            <h3>☎ Nomor Hubung</h3>
+            <a href="tel:0351464407">0351-464407</a>
+        </div>
+
+        <div class="kontak-card">
+            <h3>✉ Email</h3>
+            <a href="mailto:smkn2_madiun@yahoo.com">
+                smkn2_madiun@yahoo.com
+            </a>
+        </div>
+
+        <div class="kontak-card">
+            <h3>🌐 Website</h3>
+            <a href="https://www.smkn2madiun.sch.id/"
+               target="_blank">www.smkn2madiun.sch.id</a>
+        </div>
+
+        <div class="kontak-card">
+            <h3>🏫 Identitas Sekolah</h3>
+            <p>SMK Negeri 2 Madiun</p>
+            <p>Status: Negeri</p>
+        </div>
+
+    </div>
+</section>
+
+<div class="footer-line"></div>
+
+<footer>
+    <h3>SMK NEGERI 2 MADIUN</h3>
+    <p><strong>CERDAS, BERKARAKTER, BERPRESTASI</strong></p>
+    <p>Jl. Letjen Haryono No. 18, Kota Madiun</p>
+    <br>
+    <small>© 2026 SMK Negeri 2 Madiun | Website Profil Sekolah</small>
+</footer>
+
+</body>
+</html>
